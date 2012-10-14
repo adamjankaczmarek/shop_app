@@ -15,10 +15,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: shop_app_development
+  database: shop_app_dev
   pool: 5
   username: shop_app
-  password:
+  password: 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
