@@ -2,6 +2,10 @@ ShopApp::Application.routes.draw do
   root :to => "shop#index" 
   get "shop/index"
 
+  # Products Controller Routes
+  match 'products/' => "products#index"
+  match 'product/:id' => "products#show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

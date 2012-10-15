@@ -1,0 +1,5 @@
+<% @products.each do |prod| %>
+	<p>
+		<span class="product_link"><%= link_to prod.name, :controller => "products", :action => "show", :id => prod.id %></span>
+	</p>
+<% end %>
