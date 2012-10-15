@@ -7,8 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>My shop app</h1>
-<%= link_to "All products", :controller => "products", :action => "index" %>
+<h1><%= link_to "My shop app", :controller => "shop", :action => "index", %></h1>
 
 <%= yield %>
 

@@ -5,6 +5,10 @@ ShopApp::Application.routes.draw do
   # Products Controller Routes
   match 'products/' => "products#index"
   match 'product/:id' => "products#show"
+  
+  # Categories Controller Routes
+  #match "categories/" => "categories#index"
+  match "categories/:id" => "categories#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
