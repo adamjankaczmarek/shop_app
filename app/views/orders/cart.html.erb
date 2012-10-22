@@ -1,0 +1,29 @@
+<p>
+	Order no.: <%= @cart.id %>
+</p>
+<p>
+	Buyer: <%=@current_buyer.id%>
+</p>
+<p>
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Product name</td>
+			<td>Quantity</td>
+			<td>Unit price</td>
+			<td>Total price</td>
+			<td>Remove</td>
+		</tr>
+		<% current_cart.each do |item|%>
+		<tr>
+			<td><%=item.product.id%></td>
+			<td><%=item.product.name%></td>
+			<td><%=item.quantity%></td>
+			<td><%=item.price%></td>
+			<td><%=item.price * item.quantity%></td>
+			<td><%= link_to "X", :controller => "orders", :action => "remove_item", :order_item_id => item.id %></td>
+		</tr>
+		<% end %>
+	</table>
+</p>
+<%= link_to "Checkout", :controller => "orders", :action => "confirm", :id => @cart.id %>

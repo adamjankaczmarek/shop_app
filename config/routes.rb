@@ -10,11 +10,18 @@ ShopApp::Application.routes.draw do
   #match "categories/" => "categories#index"
   match "categories/:id" => "categories#show"
 
+  # Orders Controller Routes
+  match "orders/cart/add" => "orders#add_product"
+  match "orders/show" => "orders#show"
+  match "orders/cart" => "orders#cart"
+  match "orders/remove/item" => "orders#remove_item"
+  match "orders/confirm" => "orders#confirm"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  #   match 'products/:id' => 'catalog#view'  
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
