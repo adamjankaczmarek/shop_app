@@ -1,0 +1,6 @@
+<%= form_for @category, :url => { :action => "update" }, do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Update" %>
+<% end %>
+
+<%= link_to "Delete", admin_category_path(@category), :action => "destroy", :method => :delete %>

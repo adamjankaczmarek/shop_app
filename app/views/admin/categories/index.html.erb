@@ -1,0 +1,4 @@
+<% @categories.each do |c|%>
+<p><%= link_to c.name, :controller => "admin/categories", :action => "show", :id => c.id %></p>
+<% end %>
+<%= link_to "New", :controller => "admin/categories", :action => "new" %>

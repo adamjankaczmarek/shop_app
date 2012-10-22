@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   
-  def cart
+  def show
     @cart = current_buyer().orders.where(:confirmed => false).last
   end
   
@@ -14,12 +14,12 @@ class OrdersController < ApplicationController
       @existing.quantity += 1
       @existing.save
     end
-    redirect_to(:controller => "orders", :action => "cart")
+    redirect_to(:controller => "orders", :action => "show")
   end
   
   def remove_item
     OrderItem.delete(params[:order_item_id])
-    redirect_to(:controller => "orders", :action => "cart")
+    redirect_to(:controller => "orders", :action => "show")
   end
   
   def confirm

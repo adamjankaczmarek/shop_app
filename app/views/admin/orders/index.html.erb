@@ -1,0 +1,3 @@
+<% @orders.each do |o| %>
+<p><%= link_to o.id, admin_order_path(o.id) %></p>
+<%end%>

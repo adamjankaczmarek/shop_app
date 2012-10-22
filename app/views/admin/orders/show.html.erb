@@ -1,0 +1,26 @@
+<p>
+	Order no.: <%= @order.id %>
+</p>
+<p>
+	Buyer: <%=@order.buyer.id%>
+</p>
+<p>
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Product name</td>
+			<td>Quantity</td>
+			<td>Unit price</td>
+			<td>Total price</td>
+		</tr>
+		<% @order_items.each do |item|%>
+		<tr>
+			<td><%=item.product.id%></td>
+			<td><%=item.product.name%></td>
+			<td><%=item.quantity%></td>
+			<td><%=item.price%></td>
+			<td><%=item.price * item.quantity%></td>
+		</tr>
+		<% end %>
+	</table>
+</p>
