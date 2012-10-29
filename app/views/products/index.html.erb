@@ -1,3 +1,18 @@
+<%if @products.size == 0 %>
+
+<p>No products matches submitted criteria</p>
+<p>Try to:  
+	<span><%= link_to "change search criteria", :controller => "products", :action => "search" %></span>
+	or
+	<span><%= link_to "show all products", :controller => "products", :action => "index" %></span>
+</p>
+
+<%elsif @is_search %>
+
+<p>Found <%=@products.size%> products.</p>
+
+<%end%>
+
 <% @products.each do |prod| %>
 	<p>
 		<span class="product_link"><%= link_to prod.name, :controller => "products", :action => "show", :id => prod.id %></span>

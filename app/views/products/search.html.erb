@@ -1,0 +1,11 @@
+<%= search_form_for @q do |f| %>
+  <%= f.label :name_cont %>
+  <%= f.text_field :name_cont %>
+  <%= f.label :description_cont %>
+  <%= f.text_field :description_cont %>
+  <%= f.label :price_gteq %>
+  <%= f.text_field :price_gteq %>
+  <%= f.label :price_lt %>
+  <%= f.text_field :price_lt %>
+  <%= f.submit %>
+<% end %>

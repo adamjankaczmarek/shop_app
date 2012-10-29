@@ -24,5 +24,6 @@ ShopApp::Application.routes.draw do
   match "orders/show" => "orders#show"
   match "orders/remove/:order_item_id" => "orders#remove_item"
   match "orders/confirm/:id" => "orders#confirm"
+  match "products_search" => "products#search"
 
 end

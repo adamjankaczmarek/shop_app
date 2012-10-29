@@ -39,3 +39,5 @@ gem 'jquery-rails'
 
 # Devise
 gem 'devise'
+gem 'faker'
+gem 'ransack'
