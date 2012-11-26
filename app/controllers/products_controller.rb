@@ -3,6 +3,11 @@ class ProductsController < ApplicationController
     @q = Product.search(params[:q])
     @products = @q.result(:distinct => true)
     @is_search = params[:q] != nil 
+    
+    respond_to do |format|
+      format.json { render :json => @products }
+    end
+     
   end
   
   def show

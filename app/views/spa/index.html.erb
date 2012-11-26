@@ -1,0 +1,90 @@
+<!-- Set initial values -->
+<script>
+	//var jsonProducts = <%= raw(@products.to_json) %>;
+	//var jsonCategories = <%= raw(@categories.to_json) %>;
+	
+	//localStorage.set("products", $.parseJSON(<%= raw(@products.to_json) %>))
+	//localStorage.set("categories", $.parseJSON(<%= raw(@categories.to_json) %>))
+</script>
+<h2>Welcome to SPA</h2>
+<script id="searchForm_tpl" type="text/x-handlebars-template">
+	<div>
+		<form class="searchForm" method="get">
+			<label for="productName"> In product name: </label>
+			<input type="text" name="productName" />
+			<label for="productDescription"> In product description; </label>
+			<input type="text" name="productDescription" />
+			<label for="priceLt"> Price less than: </label>
+			<input type="text" name="priceLt" />
+			<label for="priceGt"> Price greater than: </label>
+			<input type="text" name="priceGt" />
+			<input type="button" value="search" class="submitSearch" onClick="useCase.search(this.form)" />
+		</form>
+	</div>	
+</script>
+<!-- Cart order template-->
+<script id="cartHelper_tpl" type="text/x-handlebars-template">
+	<div>
+		You have {{quantity}} products in your cart of total cost: {{totalPrice}} <a href="#" class="showFullCart">Show cart</a>
+	</div>  
+</script>
+
+<!-- Cart template -->
+<script id="cart_tpl" type="text/x-handlebars-template">
+<div id="cart_tpl_container">
+	<table>
+		<thead>
+			<tr>
+				<td>Product name</td>
+				<td>Quantity</td>
+				<td>Unit price</td>
+				<td>Total price</td>
+				<td>Remove</td>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+	<a href="#" class="backToMainPage">&lt;&lt;Back to main page</a>
+		<a href="#" class="confirmOrder">Checkout &gt;&gt;</a>
+</div>
+</script>
+
+<!-- Product cart template-->
+<script id="cartProduct_tpl" type="text/x-handlebars-template">
+	<tr>
+		<td>{{orderItem.product.name}}</td>
+		<td><input type="button" value="-" class="decreaseItem"/>{{orderItem.quantity}}<input type="button" value="+" class="increaseItem"/></td>
+		<td>{{orderItem.product.price}}</td>
+		<td>{{totalPrice}}</td>
+		<td><input type="button" class="removeFromCart" value="x" /></td>
+	</tr>
+</script>
+
+<!-- Product on list template -->
+<script id="productOnList_tpl" type="text/x-handlebars-template">
+	<p><a href="#" class="toggle">{{product.name}}</a> - {{product.price}}</p>
+</script>
+
+<!-- Product page template-->
+<script id="singleProduct_tpl" type="text/x-handlebars-template">
+	  <div>
+	  	<p>Category: <a href="#" class="showCategory">{{category.name}}</a><p>
+			<span class="product_name">Product: {{product.name}}</span>
+			<span class="product_price">Price: {{product.price}} zł.</span>
+			<p>Description: {{product.description}} </p>
+		</p>
+		<p><a href="#" class="addToCart">Dodaj do koszyka</a></p>
+	  </div>
+</script>
+
+<div id="cartHelper"></div>
+<h3>Shop App</h3>
+<div id="viewsContainer">
+	<div id="cartView">
+		
+	</div>
+	<div id="productsList"></div>
+	<div id="productView"></div>
+</div>

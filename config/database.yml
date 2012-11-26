@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: shop_app_dev
   pool: 5
-  username: shop_app
+  username: adam
   password: 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -49,7 +49,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: shop_app_production
+  database: shop_app_prod
   pool: 5
   username: shop_app
   password:

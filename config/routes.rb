@@ -26,5 +26,9 @@ ShopApp::Application.routes.draw do
   match "orders/confirm/:id" => "orders#confirm"
   match "products_search" => "products#search"
   match "hello" => 'hello#greeting'
-
+  match "spa" => 'spa#index'
+  
+  match "spaCheckout" => 'spa#confirmOrder'
+  match "spaProducts" => 'spa#getProducts'
+  match "spaCategories" => 'spa#getCategories'
 end
