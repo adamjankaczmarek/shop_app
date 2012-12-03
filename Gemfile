@@ -41,3 +41,13 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'faker'
 gem 'ransack'
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+end
+
+group :test do
+  gem 'mocha'
+  gem 'rspec'
+  gem "bbq", :git => "git://github.com/drugpl/bbq"
+end

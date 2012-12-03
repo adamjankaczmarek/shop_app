@@ -28,6 +28,7 @@ ShopApp::Application.routes.draw do
   match "hello" => 'hello#greeting'
   match "spa" => 'spa#index'
   
+  match "spaLast" => 'spa#getLastOrder'
   match "spaCheckout" => 'spa#confirmOrder'
   match "spaProducts" => 'spa#getProducts'
   match "spaCategories" => 'spa#getCategories'

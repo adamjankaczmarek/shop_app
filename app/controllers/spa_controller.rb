@@ -14,6 +14,10 @@ class SpaController < ApplicationController
       oItem.order_id = @order.id
       oItem.save
     end
+    
+    respond_to do |format|
+      format.json { render :json => @order }
+    end
   end
     
   def getProducts
@@ -29,5 +33,6 @@ class SpaController < ApplicationController
       format.json { render :json => @categories }
     end
   end
+  
   
 end

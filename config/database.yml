@@ -43,7 +43,7 @@ test:
   encoding: unicode
   database: shop_app_test
   pool: 5
-  username: shop_app
+  username: adam
   password:
 
 production:
