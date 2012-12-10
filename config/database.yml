@@ -51,5 +51,5 @@ production:
   encoding: unicode
   database: shop_app_prod
   pool: 5
-  username: shop_app
+  username: adam
   password:

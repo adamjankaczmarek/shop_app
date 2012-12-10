@@ -93,6 +93,8 @@ class @OrderHelper
     item = order.orderItems.find((item) -> item.product.id == orderItem.product.id)
     if item
       item.quantity -= orderItem.quantity
+    if item.quantity <= 0
+      @deleteItem(order, item)
     
   deleteItem: (order, orderItem) ->
     order.orderItems.remove(orderItem)
