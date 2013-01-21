@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :current_cart
+  helper_method :current_cart, :current_fakeuser
+  
+  def current_fakeuser
+    cookies[:fakelogin]
+  end
   
   def current_buyer
     @current_buyer_id = cookies[:buyer_id]

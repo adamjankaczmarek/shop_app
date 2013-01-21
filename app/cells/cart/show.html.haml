@@ -1,0 +1,9 @@
+#cart
+  You have #{@cart.size} items of total price: #{@totalPrice}
+  %p  
+    Product listing:
+    %ul
+      - @cart.each do |item|
+        %li #{item.product.name}
+      
+    

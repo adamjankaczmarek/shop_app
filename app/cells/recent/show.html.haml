@@ -1,0 +1,5 @@
+%h1
+  Recently bought items:
+%p
+  - @recent.each do |item|
+    %li #{item.product.name}

@@ -32,4 +32,8 @@ ShopApp::Application.routes.draw do
   match "spaCheckout" => 'spa#confirmOrder'
   match "spaProducts" => 'spa#getProducts'
   match "spaCategories" => 'spa#getCategories'
+  
+  match "fakeLogin" => 'fakelogin#login'
+  match "fakelogout" => 'fakelogin#logout'
+  
 end

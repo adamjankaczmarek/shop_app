@@ -6,13 +6,19 @@
   <%= javascript_include_tag "todo_app" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="margin-top:20px">
 <%= render :partial => "layouts/cart" %>
+<div style="position:fixed;top:0px;left:0px;height:20px;width:100%;background:#676767;">
+	<%= render_cell :logged, :show, :user => current_fakeuser %>
+</div>
+<div style="position:fixed;top:20px;right:0px;">
+	<%= render_cell :cart, :show, :current_cart => current_cart %>
+</div>
 <h1><%= link_to "My shop app", :controller => "shop", :action => "index" %></h1>
 
 <%= yield %>
 
-
+<%= render_cell :recent, :show, :limit => 5 %>
   
 </body>
 </html>
